@@ -1,0 +1,27 @@
+# Editor
+.vscode
+.devcontainer
+.DS_Store
+
+# Build
+/lib
+/dist
+
+# Local config
+.npmrc
+
+# Logs
+*.log
+*.heapsnapshot
+
+# Dependencies
+node_modules
+yarn.lock
+
+# Test
+test-report.json
+coverage
+
+# Docker
+
+data

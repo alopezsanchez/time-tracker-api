@@ -8,8 +8,6 @@ migrateConfig.set({
   mongodb: {
     url: `mongodb://${config.db.host}/${config.db.database}`,
     options: {
-      useFindAndModify: false,
-      useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true
     }

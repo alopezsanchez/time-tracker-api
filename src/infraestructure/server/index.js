@@ -1,5 +1,6 @@
 const express = require("express");
 const helmet = require("helmet");
+const cors = require("cors");
 const config = require("../common/config");
 const userRouter = require("./routes/user");
 
@@ -8,6 +9,7 @@ const port = config.get("service.port");
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.use(helmet());
 app.set("trust proxy", true);
 

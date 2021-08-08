@@ -6,3 +6,28 @@ services:
       - ./data:/data/db
     ports:
       - "27017:27017"
+    networks:
+      network01:
+        ipv4_address: 10.6.0.5
+  server:
+    image: time-tracking-api
+    depends_on:
+      - mongo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "4001:4001"
+    environment:
+      - NODE_ENV=docker
+    networks:
+      - network01
+
+networks:
+  network01:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.6.0.0/16
+          gateway: 10.6.0.1

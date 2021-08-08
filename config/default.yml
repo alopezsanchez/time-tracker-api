@@ -1,8 +1,8 @@
 service:
-  port: 4001
+  port: 4002
 db:
   host: localhost
   port: 27017
-  database: factorialhr
+  database: timetracking
   migrations:
     enabled: true

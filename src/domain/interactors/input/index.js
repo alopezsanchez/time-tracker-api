@@ -2,6 +2,7 @@ const Input = require("../../entities/Input");
 
 module.exports.init = inputDataSource => ({
   getInputs: () => inputDataSource.findAll(),
+  getInputsByUser: userId => inputDataSource.findByUser(userId),
   createInput: async input => {
     const EIGHT_HOURS_IN_MILLISECONDS = 1000 * 60 * 60 * 8;
 

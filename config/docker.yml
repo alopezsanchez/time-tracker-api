@@ -1,2 +1,4 @@
+service:
+  port: 4001
 db:
   host: 10.6.0.5

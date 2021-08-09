@@ -10,9 +10,13 @@ const connect = async () => {
     mongoose.set("useNewUrlParser", true);
     mongoose.set("useUnifiedTopology", true);
 
-    await mongoose.connect(
-      `${config.db.protocol}://${config.db.user}:${config.db.password}@${config.db.host}/${config.db.database}`
-    );
+    const authOptions = config.db.user + ":" + config.db.password + "@";
+
+    const connectionString = `${config.db.protocol}://${config.db.auth ? authOptions : ""}${config.db.host}:${
+      config.db.port
+    }/${config.db.database}`;
+
+    await mongoose.connect(connectionString);
 
     logger.info("Connected to database");
   } catch ({ message }) {

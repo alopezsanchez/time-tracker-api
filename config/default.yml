@@ -1,6 +1,8 @@
 service:
   port: 4002
 db:
+  auth: false
+  protocol: mongodb
   host: localhost
   port: 27017
   database: timetracking

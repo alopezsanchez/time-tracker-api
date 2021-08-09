@@ -4,9 +4,11 @@ const logger = require("pino")();
 
 const { version } = require("../package.json");
 
+const authOptions = config.db.user + ":" + config.db.password + "@";
+
 migrateConfig.set({
   mongodb: {
-    url: `${config.db.protocol}://${config.db.user}:${config.db.password}@${config.db.host}/${config.db.database}`,
+    url: `${config.db.protocol}://${config.db.auth ? authOptions : ""}${config.db.host}/${config.db.database}`,
     options: {
       useNewUrlParser: true,
       useUnifiedTopology: true

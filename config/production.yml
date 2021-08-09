@@ -1,6 +1,7 @@
 service:
   port: 8080
 db:
+  auth: true
   protocol: mongodb+srv
   port: 27017
   database: timetracking

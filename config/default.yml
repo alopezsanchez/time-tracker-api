@@ -5,6 +5,6 @@ db:
   protocol: mongodb
   host: localhost
   port: 27017
-  database: timetracking
+  database: timetracker
   migrations:
     enabled: true

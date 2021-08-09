@@ -10,7 +10,7 @@ services:
       network01:
         ipv4_address: 10.6.0.5
   server:
-    image: time-tracking-api
+    image: time-tracker-api
     depends_on:
       - mongo
     build:

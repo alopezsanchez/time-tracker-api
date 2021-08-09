@@ -4,7 +4,6 @@ db:
   auth: false
   protocol: mongodb
   host: localhost
-  port: 27017
   database: timetracker
   migrations:
     enabled: true

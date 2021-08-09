@@ -2,6 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const config = require("../common/config");
+const logger = require("../common/logger");
 const userRouter = require("./routes/user");
 const inputRouter = require("./routes/input");
 
@@ -19,6 +20,6 @@ module.exports.init = interactors => {
   app.use("/api/v1/inputs", inputRouter.init(interactors.inputInteractor));
 
   app.listen(port, () => {
-    console.log(`Service listening on port ${port}!`);
+    logger.info(`Service listening on port ${port}!`);
   });
 };

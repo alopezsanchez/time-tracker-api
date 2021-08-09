@@ -10,7 +10,9 @@ const connect = async () => {
     mongoose.set("useNewUrlParser", true);
     mongoose.set("useUnifiedTopology", true);
 
-    await mongoose.connect(`mongodb://${config.db.host}/${config.db.database}`);
+    await mongoose.connect(
+      `${config.db.protocol}://${config.db.user}:${config.db.password}@${config.db.host}/${config.db.database}`
+    );
 
     logger.info("Connected to database");
   } catch ({ message }) {

@@ -6,7 +6,7 @@ const { version } = require("../package.json");
 
 migrateConfig.set({
   mongodb: {
-    url: `mongodb://${config.db.host}/${config.db.database}`,
+    url: `${config.db.protocol}://${config.db.user}:${config.db.password}@${config.db.host}/${config.db.database}`,
     options: {
       useNewUrlParser: true,
       useUnifiedTopology: true

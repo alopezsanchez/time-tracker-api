@@ -5,7 +5,7 @@ const config = require("../common/config");
 const userRouter = require("./routes/user");
 const inputRouter = require("./routes/input");
 
-const port = config.get("service.port");
+const port = process.env.PORT || config.get("service.port");
 
 const app = express();
 

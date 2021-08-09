@@ -5,12 +5,12 @@ const config = require("../common/config");
 const userRouter = require("./routes/user");
 const inputRouter = require("./routes/input");
 
-const port = process.env.PORT || config.get("service.port");
+const port = process.env.PORT || config.service.port;
 
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: config.service.cors.origin }));
 app.use(helmet());
 app.set("trust proxy", true);
 

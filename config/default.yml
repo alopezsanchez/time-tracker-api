@@ -1,5 +1,7 @@
 service:
   port: 4002
+  cors:
+    origin: "*"
 db:
   auth: false
   protocol: mongodb

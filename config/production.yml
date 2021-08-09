@@ -1,5 +1,7 @@
 service:
   port: 8080
+  cors:
+    origin: https://alopezsanchez-timetracker.netlify.app
 db:
   auth: true
   protocol: mongodb+srv

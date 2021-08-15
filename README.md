@@ -1,4 +1,4 @@
-# Node.js scaffold
+# Time Tracker API
 
 ## Introduction
 
